@@ -46,7 +46,7 @@ export default function Home() {
                 {user?.primaryEmailAddress?.emailAddress || user?.emailAddresses?.[0]?.emailAddress}
               </div>
               <SignOutButton signOutOptions={{ redirectUrl: '/sign-in' }}>
-                <button className="w-full text-left px-3 py-2 rounded-md hover:bg-gray-100 text-gray-800">Log out</button>
+                <button className="w-full text-left px-3 py-2 rounded-md hover:bg-gray-100 text-gray-800">Sign out</button>
               </SignOutButton>
             </div>
           )}
@@ -64,8 +64,8 @@ export default function Home() {
           </SignedOut>
 
           <SignedIn>
-            <div className="text-white/70">
-              {user?.primaryEmailAddress?.emailAddress || user?.emailAddresses?.[0]?.emailAddress}
+            <div className="bg-white/10 border border-white/20 rounded-md px-6 py-4 text-white/90">
+              stay tuned
             </div>
           </SignedIn>
         </div>
