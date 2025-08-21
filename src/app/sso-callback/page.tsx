@@ -5,8 +5,8 @@ import { useClerk, useUser } from '@clerk/nextjs';
 import { useRouter } from 'next/navigation';
 
 export default function SsoCallback() {
-  const { handleRedirectCallback } = useClerk();
-  const { isSignedIn, isLoaded } = useUser();
+  const { handleRedirectCallback, signOut } = useClerk();
+  const { user, isSignedIn, isLoaded } = useUser();
   const router = useRouter();
 
   useEffect(() => {
@@ -27,7 +27,7 @@ export default function SsoCallback() {
       const domain = email.split('@')[1];
       const isAllowed = !!email && (allowedEmails.includes(email) || (!!domain && allowedDomains.includes(domain)));
       if (!isAllowed) {
-        await clerk.signOut();
+        await signOut();
         router.replace('/unauthorized');
         return;
       }

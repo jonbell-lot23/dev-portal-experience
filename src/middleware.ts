@@ -52,7 +52,7 @@ export default clerkMiddleware(async (auth, req) => {
       if (!isAllowed) {
         return NextResponse.redirect(new URL('/unauthorized', req.url));
       }
-    } catch (_e) {
+    } catch {
       return NextResponse.redirect(new URL('/unauthorized', req.url));
     }
   }
