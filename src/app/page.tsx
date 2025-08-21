@@ -26,49 +26,21 @@ export default function Home() {
     }
   }, [router, user]);
   return (
-    <div className="min-h-screen bg-black">
-      <SignedIn>
-        <div className="absolute top-4 right-4 z-50">
-          <button
-            aria-label="Open menu"
-            className="w-10 h-10 flex items-center justify-center rounded-md bg-gray-800 hover:bg-gray-700 text-white"
-            onClick={() => setMenuOpen((v) => !v)}
-          >
-            <div className="space-y-1">
-              <span className="block w-5 h-0.5 bg-white"></span>
-              <span className="block w-5 h-0.5 bg-white"></span>
-              <span className="block w-5 h-0.5 bg-white"></span>
-            </div>
-          </button>
-          {menuOpen && (
-            <div className="mt-2 w-40 rounded-md bg-white shadow-lg p-2">
-              <div className="px-2 py-1 text-xs text-gray-500">
-                {user?.primaryEmailAddress?.emailAddress || user?.emailAddresses?.[0]?.emailAddress}
-              </div>
-              <SignOutButton signOutOptions={{ redirectUrl: '/sign-in' }}>
-                <button className="w-full text-left px-3 py-2 rounded-md hover:bg-gray-100 text-gray-800">Sign out</button>
-              </SignOutButton>
-            </div>
-          )}
-        </div>
-      </SignedIn>
+    <div className="min-h-screen bg-green-950 text-white flex items-center justify-center">
+      <div className="text-center">
+        <SignedOut>
+          <SignInButton mode="modal">
+            <button className="bg-white/10 hover:bg-white/20 text-white font-semibold py-3 px-6 rounded-md border border-white/20">
+              Sign in
+            </button>
+          </SignInButton>
+        </SignedOut>
 
-      <div className="min-h-screen flex items-center justify-center p-8">
-        <div className="text-center">
-          <SignedOut>
-            <SignInButton mode="modal">
-              <button className="bg-white/10 hover:bg-white/20 text-white font-semibold py-3 px-6 rounded-md border border-white/20">
-                Sign in
-              </button>
-            </SignInButton>
-          </SignedOut>
-
-          <SignedIn>
-            <div className="bg-white/10 border border-white/20 rounded-md px-6 py-4 text-white/90">
-              stay tuned
-            </div>
-          </SignedIn>
-        </div>
+        <SignedIn>
+          <div className="bg-white/10 border border-white/20 rounded-md px-6 py-4 text-white/90">
+            Coming soon
+          </div>
+        </SignedIn>
       </div>
     </div>
   );
