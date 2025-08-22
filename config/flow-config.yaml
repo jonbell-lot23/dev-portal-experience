@@ -4,8 +4,6 @@ steps:
     screen: "homepage.html"
   - name: "XERO SIGNUP"
     screen: "xero-signup.html"
-  - name: "HOMEPAGE"
-    screen: "homepage.html"
   - name: "XERO LOGIN"
     screen: "xero-login.html"
   - name: "APPS TAB (EMPTY STATE)"

@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
-import { useRouter, useSearchParams } from "next/navigation"
 
 interface FlowStep {
   name: string
@@ -19,7 +18,6 @@ const flowConfig: FlowConfig = {
   steps: [
     { name: "HOMEPAGE", screen: "homepage.html" },
     { name: "XERO SIGNUP", screen: "xero-signup.html" },
-    { name: "HOMEPAGE", screen: "homepage.html" },
     { name: "XERO LOGIN", screen: "xero-login.html" },
     { name: "APPS TAB (EMPTY STATE)", screen: "apps-tab-empty.html" },
     { name: "ADD A NEW XERO APP STORE APP", screen: "add-app.html" },
@@ -36,10 +34,7 @@ const flowConfig: FlowConfig = {
 export default function XeroFlowClickthrough() {
   const [currentStep, setCurrentStep] = useState(0)
   const [config, setConfig] = useState<FlowConfig>(flowConfig)
-  const [screenContent, setScreenContent] = useState<string>("")
-
-  const router = useRouter()
-  const searchParams = useSearchParams()
+  const [screenSrc, setScreenSrc] = useState<string>(`/screens/${flowConfig.steps[0].screen}`)
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -55,7 +50,7 @@ export default function XeroFlowClickthrough() {
   }, [config.steps.length])
 
   useEffect(() => {
-    loadScreenContent(config.steps[currentStep].screen)
+    setScreenSrc(`/screens/${config.steps[currentStep].screen}`)
     if (typeof window !== "undefined") {
       const url = new URL(window.location.href)
       url.searchParams.set("step", currentStep.toString())
@@ -63,19 +58,20 @@ export default function XeroFlowClickthrough() {
     }
   }, [currentStep, config.steps])
 
-  const loadScreenContent = async (screenFile: string) => {
-    try {
-      const response = await fetch(`/screens/${screenFile}`)
-      if (response.ok) {
-        const content = await response.text()
-        setScreenContent(content)
-      } else {
-        setScreenContent(`<div class="text-center text-gray-500">Screen not found: ${screenFile}</div>`)
+  // Keyboard navigation: ArrowLeft / ArrowRight
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "ArrowRight") {
+        goToNext()
+      } else if (event.key === "ArrowLeft") {
+        goToPrevious()
       }
-    } catch (error) {
-      setScreenContent(`<div class="text-center text-red-500">Error loading screen: ${screenFile}</div>`)
     }
-  }
+    window.addEventListener("keydown", handleKeyDown)
+    return () => window.removeEventListener("keydown", handleKeyDown)
+  }, [currentStep, config.steps.length])
+
+  // No-op fetch: we render screens in an iframe to isolate styles
 
   const goToNext = () => {
     if (currentStep < config.steps.length - 1) {
@@ -95,6 +91,10 @@ export default function XeroFlowClickthrough() {
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
+      {/* Prototype banner */}
+      <div className="w-full bg-amber-100 text-amber-900 text-xs text-center py-2 border-b border-amber-200">
+        These are not real screens, they are prototype approximations to understand the user flow
+      </div>
       <div className="w-full bg-gray-50 border-b border-gray-200 p-4">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center justify-between mb-4">
@@ -145,16 +145,16 @@ export default function XeroFlowClickthrough() {
         </div>
       </div>
 
-      <div className="flex-1 flex flex-col items-center justify-center p-8">
-        <div className="bg-gray-100 p-8 rounded-lg shadow-sm min-w-[600px] min-h-[400px] overflow-auto">
-          <div dangerouslySetInnerHTML={{ __html: screenContent }} className="prose prose-sm max-w-none" />
-        </div>
-
-        <div className="mt-4 text-xs text-gray-500">
-          Screen: {config.steps[currentStep].screen} |
-          <a href={`?step=${currentStep}`} className="ml-2 text-blue-600 hover:underline">
-            Direct link
-          </a>
+      <div className="flex-1 p-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="bg-gray-100 p-2 rounded-lg shadow-sm w-full overflow-hidden">
+            <iframe
+              key={screenSrc}
+              src={screenSrc}
+              title={config.steps[currentStep].name}
+              className="w-full h-[75vh] min-h-[520px] bg-white rounded"
+            />
+          </div>
         </div>
       </div>
     </div>

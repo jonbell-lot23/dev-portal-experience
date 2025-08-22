@@ -3,92 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xero Signup - Skeleton</title>
+    <title>Create a free Xero login</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>input,select,button{font-size:16px}</style>
+    
 </head>
-<body class="bg-white">
-    <!-- Simplified to basic skeleton wireframe -->
-    <!-- Header -->
-    <div class="bg-gray-300 h-16 flex items-center px-4">
-        <div class="w-8 h-8 bg-gray-400 rounded-full mr-3"></div>
-        <div class="w-20 h-4 bg-gray-400 rounded"></div>
+<body class="bg-white min-h-screen">
+    <!-- Top bar -->
+    <div class="w-full h-12 bg-cyan-100 flex items-center">
+        <a href="#" class="text-sm text-slate-700 ml-4 hover:underline">&lt; Go back</a>
     </div>
 
-    <!-- Main Content -->
-    <div class="max-w-md mx-auto px-4 py-8">
-        <!-- Title -->
-        <div class="text-center mb-8">
-            <div class="w-64 h-8 bg-gray-400 rounded mx-auto mb-4"></div>
-            <div class="w-48 h-4 bg-gray-300 rounded mx-auto mb-6"></div>
-            
-            <!-- Benefits checkmarks -->
-            <div class="flex justify-center space-x-4 mb-8">
-                <div class="w-24 h-4 bg-gray-300 rounded"></div>
-                <div class="w-24 h-4 bg-gray-300 rounded"></div>
-                <div class="w-24 h-4 bg-gray-300 rounded"></div>
-            </div>
+    <div class="max-w-2xl mx-auto px-6 py-10">
+        <h1 class="text-3xl font-bold text-slate-800 mb-3">Create a free Xero login</h1>
+        <p class="text-slate-600 mb-4">Create your Xero account to get up and running with Xero API.</p>
+
+        <!-- Checklist row -->
+        <div class="flex items-center gap-4 text-sm text-slate-600 mb-6">
+            <div class="flex items-center gap-2"><span class="text-emerald-500">✓</span><span>No credit card required</span></div>
+            <div class="flex items-center gap-2"><span class="text-emerald-500">✓</span><span>24/7 online support</span></div>
+            <div class="flex items-center gap-2"><span class="text-emerald-500">✓</span><span>Cancel any time</span></div>
         </div>
 
-        <!-- Form Fields -->
+        <!-- Form -->
         <div class="space-y-4">
             <div>
-                <div class="w-20 h-4 bg-gray-400 rounded mb-2"></div>
-                <div class="w-full h-10 bg-gray-200 border border-gray-300 rounded"></div>
+                <label class="block text-sm font-medium text-slate-700 mb-1">First name</label>
+                <input type="text" class="w-full h-10 px-3 border border-slate-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="First name" />
             </div>
-            
             <div>
-                <div class="w-20 h-4 bg-gray-400 rounded mb-2"></div>
-                <div class="w-full h-10 bg-gray-200 border border-gray-300 rounded"></div>
+                <label class="block text-sm font-medium text-slate-700 mb-1">Last name</label>
+                <input type="text" class="w-full h-10 px-3 border border-slate-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Last name" />
             </div>
-            
             <div>
-                <div class="w-12 h-4 bg-gray-400 rounded mb-2"></div>
-                <div class="w-full h-10 bg-gray-200 border border-gray-300 rounded"></div>
+                <label class="block text-sm font-medium text-slate-700 mb-1">Email</label>
+                <input type="email" class="w-full h-10 px-3 border border-slate-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Email" />
             </div>
-            
             <div>
-                <div class="w-16 h-4 bg-gray-400 rounded mb-2"></div>
-                <div class="flex">
-                    <div class="w-16 h-10 bg-gray-200 border border-gray-300 rounded-l"></div>
-                    <div class="flex-1 h-10 bg-gray-200 border border-gray-300 rounded-r"></div>
+                <label class="block text-sm font-medium text-slate-700 mb-1">Phone</label>
+                <div class="flex gap-2">
+                    <select class="w-28 h-10 px-2 border border-slate-300 rounded">
+                        <option>GB</option>
+                        <option>US</option>
+                        <option>AU</option>
+                    </select>
+                    <input type="tel" class="flex-1 h-10 px-3 border border-slate-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Phone" />
                 </div>
             </div>
-            
             <div>
-                <div class="w-20 h-4 bg-gray-400 rounded mb-2"></div>
-                <div class="w-full h-10 bg-gray-200 border border-gray-300 rounded"></div>
+                <label class="block text-sm font-medium text-slate-700 mb-1">Location</label>
+                <select class="w-full h-10 px-3 border border-slate-300 rounded">
+                    <option>United Kingdom</option>
+                    <option>United States</option>
+                    <option>Australia</option>
+                </select>
             </div>
-            
-            <!-- Checkboxes -->
-            <div class="space-y-3 pt-4">
-                <div class="flex items-start">
-                    <div class="w-4 h-4 bg-gray-300 rounded mt-1 mr-3"></div>
-                    <div class="w-full h-4 bg-gray-300 rounded"></div>
+
+            <div class="space-y-3 pt-2 text-sm text-slate-700">
+                <label class="flex items-start gap-3"><input type="checkbox" class="mt-1"> <span>I've read and agreed to the terms of use, privacy notice and offer details.</span></label>
+                <div>
+                    <a href="#" class="underline">Terms of use</a>, <a href="#" class="underline">privacy notice</a>, and <a href="#" class="underline">offer details</a>.
                 </div>
-                <div class="flex items-start">
-                    <div class="w-4 h-4 bg-gray-300 rounded mt-1 mr-3"></div>
-                    <div class="w-3/4 h-4 bg-gray-300 rounded"></div>
-                </div>
+                <label class="flex items-start gap-3"><input type="checkbox" class="mt-1"> <span>Don't send me discounts or other useful messages from Xero</span></label>
             </div>
-            
-            <!-- reCAPTCHA -->
-            <div class="w-full h-16 bg-gray-200 border border-gray-300 rounded"></div>
-            
-            <!-- Submit Button -->
-            <div class="w-full h-12 bg-gray-400 rounded mt-6"></div>
+
+            <div class="flex items-center gap-6">
+                <div class="w-44 h-16 bg-slate-200 rounded flex items-center justify-center text-slate-500 text-sm">I'm not a robot</div>
+                <a href="#" class="ml-auto text-slate-700 underline">Click to see the lead record<br/>in Salesforce</a>
+            </div>
+
+            <button class="w-40 h-10 bg-emerald-600 text-white rounded hover:bg-emerald-700">Next: Confirmation</button>
         </div>
-        
-        <!-- Bottom Notice -->
-        <div class="mt-8 w-full h-16 bg-gray-100 rounded"></div>
-        
-        <!-- Footer -->
-        <div class="mt-8 text-center">
-            <div class="w-64 h-3 bg-gray-300 rounded mx-auto mb-2"></div>
-            <div class="flex justify-center space-x-4">
-                <div class="w-12 h-3 bg-gray-300 rounded"></div>
-                <div class="w-20 h-3 bg-gray-300 rounded"></div>
-            </div>
+
+        <div class="mt-12 text-xs text-slate-500 flex gap-6">
+            <a href="#" class="hover:underline">Legal</a>
+            <a href="#" class="hover:underline">Privacy notice</a>
         </div>
     </div>
+
+    <div class="mt-20 text-center text-xs text-slate-500">© 2024 Xero Limited. All rights reserved. “Xero” and “Beautiful business” are trademarks of Xero Limited.</div>
 </body>
 </html>
