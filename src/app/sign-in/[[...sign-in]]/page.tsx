@@ -35,15 +35,16 @@ export default function Page() {
           router.replace('/unauthorized');
         }
       })();
+    } else {
+      router.replace('/');
     }
   }, [isUserLoaded, isSignedIn, user, router, signOut]);
 
   if (isUserLoaded && isSignedIn) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-purple-50 dark:from-slate-900 dark:via-purple-900 dark:to-slate-900 flex items-center justify-center p-8">
+      <div className="min-h-screen bg-black flex items-center justify-center p-8">
         <div className="text-center space-y-6">
-          <div className="text-white">Stay tuned</div>
-          
+          <div className="text-white">Redirecting...</div>
         </div>
       </div>
     );

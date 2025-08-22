@@ -2,16 +2,17 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
+First, run the development server with Bun:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+bun run dev
+```
+
+Build and start in production with Bun:
+
+```bash
+bun run build
+bun run start
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
