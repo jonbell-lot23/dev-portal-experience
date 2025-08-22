@@ -1,36 +1,48 @@
-<div class="max-w-2xl mx-auto">
-  <h1 class="text-2xl font-bold mb-6">Tell Us About Your App</h1>
-  <form class="space-y-6">
-    <div>
-      <label class="block text-sm font-medium mb-2">App Name</label>
-      <input type="text" class="w-full border border-gray-300 rounded px-3 py-2" placeholder="My Awesome App">
-    </div>
-    <div>
-      <label class="block text-sm font-medium mb-2">App Description</label>
-      <textarea rows="4" class="w-full border border-gray-300 rounded px-3 py-2" placeholder="Describe what your app does..."></textarea>
-    </div>
-    <div>
-      <label class="block text-sm font-medium mb-2">Category</label>
-      <select class="w-full border border-gray-300 rounded px-3 py-2">
-        <option>Select a category</option>
-        <option>Accounting</option>
-        <option>CRM</option>
-        <option>Inventory</option>
-        <option>Payroll</option>
-        <option>Reporting</option>
-      </select>
-    </div>
-    <div>
-      <label class="block text-sm font-medium mb-2">Website URL</label>
-      <input type="url" class="w-full border border-gray-300 rounded px-3 py-2" placeholder="https://myapp.com">
-    </div>
-    <div class="flex justify-between">
-      <button type="button" class="px-6 py-2 border border-gray-300 rounded hover:bg-gray-50">
-        Back
-      </button>
-      <button type="submit" class="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
-        Continue
-      </button>
-    </div>
-  </form>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tell Us About Your App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>input,select,button,textarea{font-size:16px}</style>
+  </head>
+<body class="bg-white min-h-screen">
+  <div class="max-w-2xl mx-auto px-6 py-8">
+    <h1 class="text-2xl font-bold mb-6">Tell Us About Your App</h1>
+    <form class="space-y-6">
+      <div>
+        <label class="block text-sm font-medium mb-2">App Name</label>
+        <input type="text" class="w-full border border-gray-300 rounded px-3 py-2" placeholder="My Awesome App">
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-2">App Description</label>
+        <textarea rows="4" class="w-full border border-gray-300 rounded px-3 py-2" placeholder="Describe what your app does..."></textarea>
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-2">Category</label>
+        <select class="w-full border border-gray-300 rounded px-3 py-2">
+          <option>Select a category</option>
+          <option>Accounting</option>
+          <option>CRM</option>
+          <option>Inventory</option>
+          <option>Payroll</option>
+          <option>Reporting</option>
+        </select>
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-2">Website URL</label>
+        <input type="url" class="w-full border border-gray-300 rounded px-3 py-2" placeholder="https://myapp.com">
+      </div>
+      <div class="flex justify-between">
+        <button type="button" class="px-6 py-2 border border-gray-300 rounded hover:bg-gray-50">
+          Back
+        </button>
+        <button type="submit" class="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+          Continue
+        </button>
+      </div>
+    </form>
+  </div>
+  </body>
+  </html>

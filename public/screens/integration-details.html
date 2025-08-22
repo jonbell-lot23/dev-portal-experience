@@ -1,39 +1,51 @@
-<div class="max-w-2xl mx-auto">
-  <h1 class="text-2xl font-bold mb-6">Integration Details</h1>
-  <form class="space-y-6">
-    <div>
-      <label class="block text-sm font-medium mb-2">OAuth 2.0 Redirect URI</label>
-      <input type="url" class="w-full border border-gray-300 rounded px-3 py-2" placeholder="https://myapp.com/oauth/callback">
-      <p class="text-sm text-gray-500 mt-1">This is where users will be redirected after authorization</p>
-    </div>
-    <div>
-      <label class="block text-sm font-medium mb-2">Scopes Required</label>
-      <div class="space-y-2">
-        <label class="flex items-center">
-          <input type="checkbox" class="mr-2" checked>
-          <span class="text-sm">accounting.transactions</span>
-        </label>
-        <label class="flex items-center">
-          <input type="checkbox" class="mr-2">
-          <span class="text-sm">accounting.contacts</span>
-        </label>
-        <label class="flex items-center">
-          <input type="checkbox" class="mr-2">
-          <span class="text-sm">accounting.settings</span>
-        </label>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Integration Details</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>input,select,button,textarea{font-size:16px}</style>
+</head>
+<body class="bg-white min-h-screen">
+  <div class="max-w-2xl mx-auto px-6 py-8">
+    <h1 class="text-2xl font-bold mb-6">Integration Details</h1>
+    <form class="space-y-6">
+      <div>
+        <label class="block text-sm font-medium mb-2">OAuth 2.0 Redirect URI</label>
+        <input type="url" class="w-full border border-gray-300 rounded px-3 py-2" placeholder="https://myapp.com/oauth/callback">
+        <p class="text-sm text-gray-500 mt-1">This is where users will be redirected after authorization</p>
       </div>
-    </div>
-    <div>
-      <label class="block text-sm font-medium mb-2">Webhook URL (Optional)</label>
-      <input type="url" class="w-full border border-gray-300 rounded px-3 py-2" placeholder="https://myapp.com/webhooks/xero">
-    </div>
-    <div class="flex justify-between">
-      <button type="button" class="px-6 py-2 border border-gray-300 rounded hover:bg-gray-50">
-        Back
-      </button>
-      <button type="submit" class="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
-        Continue
-      </button>
-    </div>
-  </form>
-</div>
+      <div>
+        <label class="block text-sm font-medium mb-2">Scopes Required</label>
+        <div class="space-y-2">
+          <label class="flex items-center">
+            <input type="checkbox" class="mr-2" checked>
+            <span class="text-sm">accounting.transactions</span>
+          </label>
+          <label class="flex items-center">
+            <input type="checkbox" class="mr-2">
+            <span class="text-sm">accounting.contacts</span>
+          </label>
+          <label class="flex items-center">
+            <input type="checkbox" class="mr-2">
+            <span class="text-sm">accounting.settings</span>
+          </label>
+        </div>
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-2">Webhook URL (Optional)</label>
+        <input type="url" class="w-full border border-gray-300 rounded px-3 py-2" placeholder="https://myapp.com/webhooks/xero">
+      </div>
+      <div class="flex justify-between">
+        <button type="button" class="px-6 py-2 border border-gray-300 rounded hover:bg-gray-50">
+          Back
+        </button>
+        <button type="submit" class="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+          Continue
+        </button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
