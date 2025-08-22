@@ -1,42 +1,54 @@
-<div class="max-w-2xl mx-auto">
-  <h1 class="text-2xl font-bold mb-6">Confirm App Details</h1>
-  <div class="bg-gray-50 rounded-lg p-6 space-y-4">
-    <div class="flex justify-between">
-      <span class="font-medium">App Name:</span>
-      <span>My Awesome App</span>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirm App Details</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>input,select,button,textarea{font-size:16px}</style>
+</head>
+<body class="bg-white min-h-screen">
+  <div class="max-w-2xl mx-auto px-6 py-8">
+    <h1 class="text-2xl font-bold mb-6">Confirm App Details</h1>
+    <div class="bg-gray-50 rounded-lg p-6 space-y-4">
+      <div class="flex justify-between">
+        <span class="font-medium">App Name:</span>
+        <span>My Awesome App</span>
+      </div>
+      <div class="flex justify-between">
+        <span class="font-medium">Category:</span>
+        <span>Accounting</span>
+      </div>
+      <div class="flex justify-between">
+        <span class="font-medium">Website:</span>
+        <span class="text-blue-600">https://myapp.com</span>
+      </div>
+      <div class="flex justify-between">
+        <span class="font-medium">OAuth Redirect:</span>
+        <span class="text-sm">https://myapp.com/oauth/callback</span>
+      </div>
+      <div class="flex justify-between">
+        <span class="font-medium">Scopes:</span>
+        <span class="text-sm">accounting.transactions</span>
+      </div>
     </div>
-    <div class="flex justify-between">
-      <span class="font-medium">Category:</span>
-      <span>Accounting</span>
+    <div class="mt-6 p-4 border border-blue-200 bg-blue-50 rounded-lg">
+      <h3 class="font-medium text-blue-900 mb-2">Review Checklist</h3>
+      <ul class="text-sm text-blue-800 space-y-1">
+        <li>✓ App information is accurate</li>
+        <li>✓ Integration settings are correct</li>
+        <li>✓ Required documentation provided</li>
+        <li>✓ Security review completed</li>
+      </ul>
     </div>
-    <div class="flex justify-between">
-      <span class="font-medium">Website:</span>
-      <span class="text-blue-600">https://myapp.com</span>
-    </div>
-    <div class="flex justify-between">
-      <span class="font-medium">OAuth Redirect:</span>
-      <span class="text-sm">https://myapp.com/oauth/callback</span>
-    </div>
-    <div class="flex justify-between">
-      <span class="font-medium">Scopes:</span>
-      <span class="text-sm">accounting.transactions</span>
+    <div class="mt-8 flex justify-between">
+      <button type="button" class="px-6 py-2 border border-gray-300 rounded hover:bg-gray-50">
+        Back to Edit
+      </button>
+      <button type="submit" class="px-6 py-2 bg-green-600 text-white rounded hover:bg-green-700">
+        Confirm & Submit
+      </button>
     </div>
   </div>
-  <div class="mt-6 p-4 border border-blue-200 bg-blue-50 rounded-lg">
-    <h3 class="font-medium text-blue-900 mb-2">Review Checklist</h3>
-    <ul class="text-sm text-blue-800 space-y-1">
-      <li>✓ App information is accurate</li>
-      <li>✓ Integration settings are correct</li>
-      <li>✓ Required documentation provided</li>
-      <li>✓ Security review completed</li>
-    </ul>
-  </div>
-  <div class="mt-8 flex justify-between">
-    <button type="button" class="px-6 py-2 border border-gray-300 rounded hover:bg-gray-50">
-      Back to Edit
-    </button>
-    <button type="submit" class="px-6 py-2 bg-green-600 text-white rounded hover:bg-green-700">
-      Confirm & Submit
-    </button>
-  </div>
-</div>
+</body>
+</html>
