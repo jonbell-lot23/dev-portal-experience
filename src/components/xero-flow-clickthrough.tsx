@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { SignedIn, SignOutButton } from "@clerk/nextjs"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
 interface FlowStep {
@@ -92,8 +93,15 @@ export default function XeroFlowClickthrough() {
   return (
     <div className="min-h-screen bg-white flex flex-col">
       {/* Prototype banner */}
-      <div className="w-full bg-amber-100 text-amber-900 text-sm text-center py-3 border-b border-amber-200 font-medium">
-        These are not real screens, they are prototype approximations to understand the user flow
+      <div className="relative w-full bg-amber-100 text-amber-900 text-sm py-3 border-b border-amber-200 font-medium">
+        <div className="text-center px-16">These are not real screens, they are prototype approximations to understand the user flow</div>
+        <div className="absolute right-4 top-1/2 -translate-y-1/2">
+          <SignedIn>
+            <SignOutButton signOutOptions={{ redirectUrl: "/" }}>
+              <button className="text-amber-900 underline hover:no-underline text-sm">Log out</button>
+            </SignOutButton>
+          </SignedIn>
+        </div>
       </div>
       <div className="w-full bg-gray-50 border-b border-gray-200 p-4">
         <div className="max-w-6xl mx-auto">
