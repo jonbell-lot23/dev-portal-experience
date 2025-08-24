@@ -3,46 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tell Us About Your App</title>
+  <title>Tell us about your app</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>input,select,button,textarea{font-size:16px}</style>
   </head>
-<body class="bg-white min-h-screen">
-  <div class="max-w-2xl mx-auto px-6 py-8">
-    <h1 class="text-2xl font-bold mb-6">Tell Us About Your App</h1>
-    <form class="space-y-6">
+<body class="bg-slate-800/70 min-h-screen flex items-center justify-center p-6">
+  <div class="w-[560px] max-w-full bg-white rounded shadow-xl">
+    <div class="flex items-center justify-between p-5">
+      <h1 class="text-lg font-semibold">Tell us about your app</h1>
+      <button class="text-slate-500">✕</button>
+    </div>
+    <div class="px-5 pb-5 space-y-6">
       <div>
-        <label class="block text-sm font-medium mb-2">App Name</label>
-        <input type="text" class="w-full border border-gray-300 rounded px-3 py-2" placeholder="My Awesome App">
+        <div class="text-xs uppercase tracking-wide text-slate-500 mb-2">Made for</div>
+        <div class="border border-slate-300 rounded divide-y">
+          <label class="flex items-center gap-3 p-3 text-sm">
+            <input type="radio" name="madefor" class="accent-blue-600" checked>
+            <span>Small business owners</span>
+          </label>
+          <label class="flex items-center gap-3 p-3 text-sm">
+            <input type="radio" name="madefor" class="accent-blue-600">
+            <span>Accountants and bookkeepers</span>
+          </label>
+          <label class="flex items-center gap-3 p-3 text-sm">
+            <input type="radio" name="madefor" class="accent-blue-600">
+            <span>Other (Please specify)</span>
+          </label>
+        </div>
       </div>
       <div>
-        <label class="block text-sm font-medium mb-2">App Description</label>
-        <textarea rows="4" class="w-full border border-gray-300 rounded px-3 py-2" placeholder="Describe what your app does..."></textarea>
+        <div class="text-xs uppercase tracking-wide text-slate-500 mb-2">App type</div>
+        <div class="border border-slate-300 rounded divide-y">
+          <label class="flex items-center gap-3 p-3 text-sm">
+            <input type="radio" name="apptype" class="accent-blue-600" checked>
+            <span>Production app</span>
+          </label>
+          <label class="flex items-center gap-3 p-3 text-sm">
+            <input type="radio" name="apptype" class="accent-blue-600">
+            <span>Test app</span>
+          </label>
+        </div>
       </div>
       <div>
-        <label class="block text-sm font-medium mb-2">Category</label>
-        <select class="w-full border border-gray-300 rounded px-3 py-2">
-          <option>Select a category</option>
-          <option>Accounting</option>
-          <option>CRM</option>
-          <option>Inventory</option>
-          <option>Payroll</option>
-          <option>Reporting</option>
-        </select>
+        <label class="block text-sm font-medium mb-2">What does your app do? <span class="text-slate-400">(required)</span></label>
+        <textarea rows="5" class="w-full border border-slate-300 rounded px-3 py-2" placeholder="Briefly describe your app's main functionality."></textarea>
       </div>
-      <div>
-        <label class="block text-sm font-medium mb-2">Website URL</label>
-        <input type="url" class="w-full border border-gray-300 rounded px-3 py-2" placeholder="https://myapp.com">
+      <div class="flex items-center justify-end gap-3 pt-2">
+        <button class="px-4 py-2 text-sm border border-slate-300 rounded bg-white">Cancel</button>
+        <button class="px-4 py-2 text-sm bg-slate-700 text-white rounded">Submit</button>
       </div>
-      <div class="flex justify-between">
-        <button type="button" class="px-6 py-2 border border-gray-300 rounded hover:bg-gray-50">
-          Back
-        </button>
-        <button type="submit" class="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
-          Continue
-        </button>
-      </div>
-    </form>
+    </div>
   </div>
   </body>
   </html>

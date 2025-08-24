@@ -3,95 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add App - Skeleton</title>
+    <title>Add a new Xero App Store app</title>
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-white">
-    <!-- Header -->
-    <div class="bg-slate-800 text-white h-16 flex items-center px-6">
-        <div class="w-8 h-8 bg-cyan-400 rounded-full mr-4 flex items-center justify-center">
-            <span class="text-xs font-bold text-slate-800">X</span>
-        </div>
-        <span class="text-white font-semibold mr-8">DEVELOPER</span>
-        <div class="flex space-x-6 text-sm">
-            <span class="text-white">Apps</span>
-            <span class="text-gray-300">Docs</span>
-            <span class="text-gray-300">Community</span>
-        </div>
-        <div class="ml-auto">
-            <div class="bg-blue-600 text-white px-4 py-2 rounded text-sm">New app</div>
-        </div>
-    </div>
-
+    <style>input,select,button,textarea{font-size:16px}</style>
+    </head>
+<body class="bg-slate-800/70 min-h-screen flex items-center justify-center p-6">
     <!-- Modal/Dialog Content -->
-    <div class="p-8 flex items-center justify-center min-h-screen bg-gray-50">
-        <div class="bg-white rounded-lg max-w-md w-full p-6 shadow-lg border">
-            <!-- Header -->
-            <div class="flex justify-between items-center mb-6">
-                <h2 class="text-lg font-semibold text-gray-800">Add a new Xero App Store app</h2>
-                <div class="w-6 h-6 bg-gray-300 rounded"></div>
+    <div class="w-[600px] max-w-full bg-white rounded shadow-xl">
+        <!-- Header -->
+        <div class="flex items-center justify-between p-5">
+            <h2 class="text-lg font-semibold">Add a new Xero App Store app</h2>
+            <button class="text-slate-500">✕</button>
+        </div>
+
+        <!-- Form Fields -->
+        <div class="px-5 pb-5 space-y-5">
+            <div>
+                <label class="block text-sm text-slate-700 mb-2">App name</label>
+                <input class="w-full h-10 border border-slate-300 rounded px-3">
             </div>
-            
-            <!-- Form Fields -->
-            <div class="space-y-4">
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2">App name</label>
-                    <div class="w-full h-10 bg-gray-100 border border-gray-300 rounded"></div>
-                </div>
-                
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2">Integration type</label>
-                    <div class="space-y-3">
-                        <div class="flex items-start p-3 border border-blue-200 bg-blue-50 rounded">
-                            <div class="w-4 h-4 bg-blue-600 rounded-full mr-3 mt-0.5"></div>
-                            <div>
-                                <div class="font-medium text-gray-800">Web app</div>
-                                <div class="text-sm text-gray-600">Standard auth code</div>
-                                <div class="text-xs text-gray-500 mt-1">Connect up to 25 organisations before certification</div>
-                            </div>
+
+            <div>
+                <div class="text-xs uppercase tracking-wide text-slate-500 mb-2">Integration type</div>
+                <div class="border border-slate-300 rounded divide-y">
+                    <label class="flex items-start gap-3 p-3 text-sm">
+                        <input type="radio" name="integration" class="mt-1 accent-blue-600" checked>
+                        <div>
+                            <div class="font-medium">Web app</div>
+                            <div class="text-slate-500">Standard auth code</div>
+                            <div class="text-xs text-slate-500">Connect up to 25 organisations before certification</div>
                         </div>
-                        
-                        <div class="flex items-start p-3 border border-gray-200 rounded">
-                            <div class="w-4 h-4 bg-gray-300 rounded-full mr-3 mt-0.5"></div>
-                            <div>
-                                <div class="font-medium text-gray-800">Mobile or desktop app</div>
-                                <div class="text-sm text-gray-600">Auth code with PKCE</div>
-                                <div class="text-xs text-gray-500 mt-1">Connect up to 25 organisations before certification</div>
-                            </div>
+                    </label>
+                    <label class="flex items-start gap-3 p-3 text-sm">
+                        <input type="radio" name="integration" class="mt-1 accent-blue-600">
+                        <div>
+                            <div class="font-medium">Mobile or desktop app</div>
+                            <div class="text-slate-500">Auth code with PKCE. For native apps that can't securely store a client secret</div>
+                            <div class="text-xs text-slate-500">Connect up to 25 organisations before certification</div>
                         </div>
-                        
-                        <div class="flex items-start p-3 border border-gray-200 rounded">
-                            <div class="w-4 h-4 bg-gray-300 rounded-full mr-3 mt-0.5"></div>
-                            <div>
-                                <div class="font-medium text-gray-800">Custom connection</div>
-                                <div class="text-sm text-gray-600">Premium one-to-one integration</div>
-                                <div class="text-xs text-gray-500 mt-1">Only available to Xero organisations in UK, AU & NZ</div>
-                            </div>
+                    </label>
+                    <label class="flex items-start gap-3 p-3 text-sm">
+                        <input type="radio" name="integration" class="mt-1 accent-blue-600">
+                        <div>
+                            <div class="font-medium">Custom connection</div>
+                            <div class="text-slate-500">Premium one-to-one integration that utilises the client credentials grant type</div>
+                            <div class="text-xs text-slate-500">Only available to Xero organisations in UK, AU & NZ</div>
                         </div>
-                    </div>
+                    </label>
                 </div>
-                
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2">Company or application URL</label>
-                    <div class="w-full h-10 bg-gray-100 border border-gray-300 rounded"></div>
-                </div>
-                
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2">OAuth 2.0 redirect URI</label>
-                    <div class="w-full h-10 bg-gray-100 border border-gray-300 rounded"></div>
-                </div>
-                
-                <!-- Checkbox -->
-                <div class="flex items-start pt-4">
-                    <div class="w-4 h-4 bg-gray-300 rounded mt-1 mr-3"></div>
-                    <div class="text-sm text-gray-700">I have read and agree to the Xero Developer Platform terms and conditions</div>
+                <div class="mt-2 text-xs">
+                    <a href="#" class="text-blue-600">Learn more about integration types</a>
                 </div>
             </div>
-            
+
+            <div>
+                <label class="block text-xs text-slate-700 mb-1">Company or application URL</label>
+                <input class="w-full h-10 border border-slate-300 rounded px-3">
+            </div>
+
+            <div>
+                <label class="block text-xs text-slate-700 mb-1">OAuth 2.0 redirect URI</label>
+                <input class="w-full h-10 border border-slate-300 rounded px-3">
+                <div class="text-xs text-slate-500 mt-1">Add more redirects after creating app. <a href="#" class="text-blue-600">Learn about redirects</a></div>
+            </div>
+
+            <label class="flex items-start gap-3 text-sm">
+                <input type="checkbox" class="mt-1 accent-blue-600">
+                <span>I have read and agree to the Xero Developer Platform <a href="#" class="text-blue-600">terms and conditions</a></span>
+            </label>
+
             <!-- Buttons -->
-            <div class="flex justify-end space-x-3 mt-6">
-                <button class="px-4 py-2 text-gray-700 bg-gray-100 rounded hover:bg-gray-200">Cancel</button>
-                <button class="px-4 py-2 text-white bg-gray-400 rounded">Create app</button>
+            <div class="flex items-center justify-end gap-3 pt-2">
+                <button class="px-4 py-2 text-sm border border-slate-300 rounded bg-white">Cancel</button>
+                <button class="px-4 py-2 text-sm bg-slate-700 text-white rounded">Create app</button>
             </div>
         </div>
     </div>

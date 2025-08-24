@@ -14,7 +14,7 @@ steps:
     screen: "tell-us-about-app.html"
   - name: "INTEGRATION DETAILS"
     screen: "integration-details.html"
-  - name: "INTEGRATION DETAILS, PAGE TWO"
+  - name: "INTEGRATION DETAILS (XAS Sell version)"
     screen: "integration-details-2.html"
   - name: "STILL TO DO FORM"
     screen: "still-to-do.html"

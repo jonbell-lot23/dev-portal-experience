@@ -23,7 +23,7 @@ const flowConfig: FlowConfig = {
     { name: "ADD A NEW XERO APP STORE APP", screen: "add-app.html" },
     { name: "TELL US ABOUT YOUR APP", screen: "tell-us-about-app.html" },
     { name: "INTEGRATION DETAILS", screen: "integration-details.html" },
-    { name: "INTEGRATION DETAILS, PAGE TWO", screen: "integration-details-2.html" },
+    { name: "INTEGRATION DETAILS (XAS Sell version)", screen: "integration-details-2.html" },
     { name: "STILL TO DO FORM", screen: "still-to-do.html" },
     { name: "APP DETAILS CONFIRM", screen: "app-details-confirm.html" },
     { name: "APP READINESS", screen: "app-readiness.html" },
@@ -92,7 +92,7 @@ export default function XeroFlowClickthrough() {
   return (
     <div className="min-h-screen bg-white flex flex-col">
       {/* Prototype banner */}
-      <div className="w-full bg-amber-100 text-amber-900 text-xs text-center py-2 border-b border-amber-200">
+      <div className="w-full bg-amber-100 text-amber-900 text-sm text-center py-3 border-b border-amber-200 font-medium">
         These are not real screens, they are prototype approximations to understand the user flow
       </div>
       <div className="w-full bg-gray-50 border-b border-gray-200 p-4">

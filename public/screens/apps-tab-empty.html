@@ -19,7 +19,10 @@
             <span class="text-gray-300">Community</span>
         </div>
         <div class="ml-auto">
-            <div class="bg-blue-600 text-white px-4 py-2 rounded text-sm">New app</div>
+            <button id="headerNewAppBtn" class="bg-blue-600 text-white px-4 py-2 rounded text-sm flex items-center gap-2">
+                <span>New app</span>
+                <span class="text-xs">▾</span>
+            </button>
         </div>
     </div>
 
@@ -34,10 +37,84 @@
             <h2 class="text-lg text-gray-800 mb-2">You haven't added any apps yet</h2>
             <p class="text-gray-600 mb-8">Add an app to get started.</p>
             
-            <button class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">
+            <button id="mainNewAppBtn" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">
                 New app
             </button>
         </div>
     </div>
+    <!-- Modal: New Xero App Store app -->
+    <div id="newAppModal" class="hidden fixed inset-0 bg-slate-800/70 flex items-center justify-center p-6">
+      <div class="w-[600px] max-w-full bg-white rounded shadow-xl">
+        <div class="flex items-center justify-between p-5">
+          <h2 class="text-lg font-semibold">Add a new Xero App Store app</h2>
+          <button id="closeNewAppModal" class="text-slate-500">✕</button>
+        </div>
+        <div class="px-5 pb-5 space-y-5">
+          <div>
+            <label class="block text-sm text-slate-700 mb-2">App name</label>
+            <input class="w-full h-10 border border-slate-300 rounded px-3">
+          </div>
+          <div>
+            <div class="text-xs uppercase tracking-wide text-slate-500 mb-2">Integration type</div>
+            <div class="border border-slate-300 rounded divide-y">
+              <label class="flex items-start gap-3 p-3 text-sm">
+                <input type="radio" name="integration" class="mt-1 accent-blue-600" checked>
+                <div>
+                  <div class="font-medium">Web app</div>
+                  <div class="text-slate-500">Standard auth code</div>
+                  <div class="text-xs text-slate-500">Connect up to 25 organisations before certification</div>
+                </div>
+              </label>
+              <label class="flex items-start gap-3 p-3 text-sm">
+                <input type="radio" name="integration" class="mt-1 accent-blue-600">
+                <div>
+                  <div class="font-medium">Mobile or desktop app</div>
+                  <div class="text-slate-500">Auth code with PKCE. For native apps that can't securely store a client secret</div>
+                  <div class="text-xs text-slate-500">Connect up to 25 organisations before certification</div>
+                </div>
+              </label>
+              <label class="flex items-start gap-3 p-3 text-sm">
+                <input type="radio" name="integration" class="mt-1 accent-blue-600">
+                <div>
+                  <div class="font-medium">Custom connection</div>
+                  <div class="text-slate-500">Premium one-to-one integration that utilises the client credentials grant type</div>
+                  <div class="text-xs text-slate-500">Only available to Xero organisations in UK, AU & NZ</div>
+                </div>
+              </label>
+            </div>
+            <div class="mt-2 text-xs text-blue-600"><a href="#">Learn more about integration types</a></div>
+          </div>
+          <div>
+            <label class="block text-xs text-slate-700 mb-1">Company or application URL</label>
+            <input class="w-full h-10 border border-slate-300 rounded px-3">
+          </div>
+          <div>
+            <label class="block text-xs text-slate-700 mb-1">OAuth 2.0 redirect URI</label>
+            <input class="w-full h-10 border border-slate-300 rounded px-3">
+            <div class="text-xs text-slate-500 mt-1">Add more redirects after creating app. <a href="#" class="text-blue-600">Learn about redirects</a></div>
+          </div>
+          <label class="flex items-start gap-3 text-sm">
+            <input type="checkbox" class="mt-1 accent-blue-600">
+            <span>I have read and agree to the Xero Developer Platform <a href="#" class="text-blue-600">terms and conditions</a></span>
+          </label>
+          <div class="flex items-center justify-end gap-3 pt-2">
+            <button id="cancelNewAppModal" class="px-4 py-2 text-sm border border-slate-300 rounded bg-white">Cancel</button>
+            <button class="px-4 py-2 text-sm bg-slate-700 text-white rounded">Create app</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+    (function(){
+      const modal = document.getElementById('newAppModal');
+      const openers = [document.getElementById('headerNewAppBtn'), document.getElementById('mainNewAppBtn')];
+      const closers = [document.getElementById('closeNewAppModal'), document.getElementById('cancelNewAppModal')];
+      openers.forEach(btn => btn && btn.addEventListener('click', function(e){ e.preventDefault(); e.stopPropagation(); modal.classList.remove('hidden'); }));
+      closers.forEach(btn => btn && btn.addEventListener('click', function(e){ e.preventDefault(); modal.classList.add('hidden'); }));
+      modal.addEventListener('click', function(){ modal.classList.add('hidden'); });
+      modal.querySelector('div.w-[600px]').addEventListener('click', function(e){ e.stopPropagation(); });
+    })();
+    </script>
 </body>
 </html>
