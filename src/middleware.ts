@@ -44,7 +44,8 @@ export default clerkMiddleware(async (auth, req) => {
   if (!isEmailAllowedByClaim) {
     // Fallback to fetching the user and checking primary email only
     try {
-      const user = await clerkClient.users.getUser(userId);
+      const client = await clerkClient();
+      const user = await client.users.getUser(userId);
       const primaryEmail = user.emailAddresses?.find(e => e.id === user.primaryEmailAddressId)?.emailAddress?.toLowerCase();
       const domain = primaryEmail?.split('@')[1];
       const isAllowed = !!primaryEmail && (
