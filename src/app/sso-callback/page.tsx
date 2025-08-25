@@ -4,6 +4,9 @@ import { useEffect } from 'react';
 import { useClerk, useUser } from '@clerk/nextjs';
 import { useRouter } from 'next/navigation';
 
+// This page relies on Clerk client context; avoid static prerendering during build
+export const dynamic = 'force-dynamic';
+
 export default function SsoCallback() {
   const { handleRedirectCallback, signOut } = useClerk();
   const { user, isSignedIn, isLoaded } = useUser();
@@ -34,7 +37,7 @@ export default function SsoCallback() {
       router.replace('/');
     };
     void proceed();
-  }, [handleRedirectCallback, isLoaded, isSignedIn, router]);
+  }, [handleRedirectCallback, isLoaded, isSignedIn, router, signOut, user]);
 
   return (
     <div className="min-h-screen flex items-center justify-center">
